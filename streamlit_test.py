@@ -225,7 +225,7 @@ with tab2:
     df14 = pd.DataFrame(mycursor.fetchall(), columns=['State', 'Year',"Quarter", 'District', 'RegisteredUser'])
     st.dataframe(df14)
 
-    query15=f"SELECT State,Year,Quarter,District,Registered_User FROM map_user WHERE Year IN {tuple(year)} AND State IN {tuple(state)} AND District = {tuple(dist)} ORDER BY State,Year,Quarter,District;"
+    query15=f"SELECT State,Year,Quarter,District,Registered_User FROM map_user WHERE Year IN {tuple(year)} AND State IN {tuple(state)} AND District IN {tuple(dist)} ORDER BY State,Year,Quarter,District;"
     mycursor.execute(query15)
     df15 = pd.DataFrame(mycursor.fetchall(), columns=['State', 'Year',"Quarter", 'District', 'RegisteredUser'])
     st.dataframe(df15)
